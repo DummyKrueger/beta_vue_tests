@@ -9,7 +9,11 @@
         v-bind:placeholder="initValue"
         v-model="newItem"
       />
-      <button type="submit" class="button" v-on:click.prevent="console.log(this.newItem)">
+      <button
+        type="submit"
+        class="button"
+        v-on:click.prevent="sendItem(newItem)"
+      >
         <strong>Add</strong>
       </button>
     </form>
@@ -28,6 +32,13 @@ export default {
     return {
       newItem: "",
     };
+  },
+
+  methods: {
+    sendItem(item) {
+      this.$emit("basic-input-content", item);
+      this.newItem = "";
+    },
   },
 };
 </script>

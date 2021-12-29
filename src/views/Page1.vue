@@ -10,18 +10,23 @@
       <OutputWall :text="outputText" />
     </div>
     <div>
-      <BasicInput v-bind:initValue="pHolder" />
+      <BasicInput
+        v-bind:initValue="pHolder"
+        v-on:basic-input-content="items.push($event)"
+      />
+      <List />
     </div>
   </div>
 </template>
 
 <script>
 import Bar from "../components/Bar.vue";
-import Clock from "../components/Clock/Clock.vue";
-import RedLine from "../components/Clock/RedLine.vue";
-import InputWall from "../components/TextWall/InputWall.vue";
-import OutputWall from "../components/TextWall/OutputWall.vue";
-import BasicInput from "../components/BasicInput.vue";
+import Clock from "../components/Clock.vue";
+import RedLine from "../components/RedLine.vue";
+import InputWall from "../components/InputWall.vue";
+import OutputWall from "../components/OutputWall.vue";
+import BasicInput from "../components/basic-components/BasicInput.vue";
+import List from "../components/basic-components/List.vue";
 
 export default {
   name: "Page1",
@@ -33,6 +38,7 @@ export default {
     InputWall,
     OutputWall,
     BasicInput,
+    List,
   },
 
   data() {
@@ -40,6 +46,7 @@ export default {
       time: "waiting...",
       outputText: "",
       pHolder: "es. Apple",
+      items: [],
     };
   },
 
