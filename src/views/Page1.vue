@@ -14,7 +14,7 @@
         v-bind:initValue="pHolder"
         v-on:basic-input-content="items.push($event)"
       />
-      <List />
+      <List v-bind:items="items" />
     </div>
   </div>
 </template>

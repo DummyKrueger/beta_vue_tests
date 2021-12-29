@@ -13,6 +13,7 @@
         type="submit"
         class="button"
         v-on:click.prevent="sendItem(newItem)"
+        v-show="newItem"
       >
         <strong>Add</strong>
       </button>
@@ -52,8 +53,7 @@ export default {
 .label {
   display: block;
   font-family: Arial, Helvetica, sans-serif;
-  text-align: right;
-  margin: 0 4px 5px 0;
+  margin: 0 0 5px 135px;
 }
 
 .input {

@@ -1,7 +1,11 @@
 <template>
   <div>
     <li>
-      <ListItem />
+      <ListItem
+        v-for="(item, index) in items"
+        v-bind:key="index"
+        :item="item"
+      />
     </li>
   </div>
 </template>
@@ -14,6 +18,10 @@ export default {
 
   components: {
     ListItem,
+  },
+
+  props: {
+    items: { type: Array },
   },
 };
 </script>
